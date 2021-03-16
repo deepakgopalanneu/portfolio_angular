@@ -1,0 +1,15 @@
+.bodysize{
+    padding-top: 65px; 
+    padding-bottom: 15px;
+    width:60%; 
+    margin:0 auto;
+    border-bottom: 2px solid gray;
+}
+.bodytext{
+    text-align: left;
+    color:rgb(99, 97, 97);
+}
+.form-group input{
+    height: 200px;
+    align-content: initial;
+}
