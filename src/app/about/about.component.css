@@ -1,0 +1,9 @@
+.bodysize{
+    padding-top: 40px; 
+    width:60%; 
+    margin:0 auto;
+}
+.bodytext{
+    text-align: justify;
+    color:rgb(99, 97, 97);
+}

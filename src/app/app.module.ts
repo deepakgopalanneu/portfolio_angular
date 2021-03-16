@@ -10,6 +10,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { AboutComponent } from './about/about.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { MainBodyComponent } from './main-body/main-body.component';
+import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import { MainBodyComponent } from './main-body/main-body.component';
     ContactmeComponent,
     ProjectsComponent,
     AboutComponent,
-    MainBodyComponent
+    MainBodyComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

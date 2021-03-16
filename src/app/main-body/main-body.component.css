@@ -1,10 +1,10 @@
+
 .bodysize{
     padding-top: 65px; 
-    background-color:#ffffff; 
+    padding-bottom: 15px;
     width:60%; 
     margin:0 auto;
-    
-    
+    border-bottom: 2px solid gray;
 }
 .bodytext{
     text-align: center;
@@ -14,11 +14,12 @@
 h1{
    font-family:  'Permanent Marker', cursive;
    color: black;
+   align-self: center;
 }
-.headline1{
 
-}
 .picture img{
-    width: 300px;
-    height: 300px;
+    width: 30%;
+    height: 30%;
+    align-self: center;
+
 }

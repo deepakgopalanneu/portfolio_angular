@@ -1,10 +1,13 @@
 @import '~bootstrap/dist/css/bootstrap.css';
 
+.navbar{
+  max-height: 50px;
+}
 .navbar .navbar-expand-lg .navbar-custom .navbar-inverse .navbar-inner .fixed-top .bg-white{
   border: black;
   border-style: solid;
   border-width: medium;
-
+  
     /*  For Transparent Nav bar
     border-width: 0px;
     -webkit-box-shadow: 0px 0px;
