@@ -9,7 +9,7 @@ import { ContactmeComponent } from './contactme/contactme.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { AboutComponent } from './about/about.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-
+import { MainBodyComponent } from './main-body/main-body.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +17,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     ResumeComponent,
     ContactmeComponent,
     ProjectsComponent,
-    AboutComponent
+    AboutComponent,
+    MainBodyComponent
   ],
   imports: [
     BrowserModule,
