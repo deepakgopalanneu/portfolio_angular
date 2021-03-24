@@ -1,18 +1,15 @@
-@import '~bootstrap/dist/css/bootstrap.css';
+@import "~bootstrap/dist/css/bootstrap.css";
 
-.titlefont{
-  font-family: 'Great Vibes', cursive;
-  font-size: large;
+.titlefont {
+  font-family: "Great Vibes", cursive;
+  font-size: larger;
   font-weight: bolder;
-  color: rgb(0,0,0);
+  color: rgb(0, 0, 0);
 }
 
 nav div ul li a {
-  font-family: Montserrat,helvetica neue,Helvetica,Arial,sans-serif ; 
-  font-size: small;
-  color: rgb(0,0,0) !important;
+  font-family: Montserrat, helvetica neue, Helvetica, Arial, sans-serif;
+  font-size: large;
+  /* font-weight: bold; */
+  /* color: rgb(0, 0, 0) !important; */
 }
-
-
-
-

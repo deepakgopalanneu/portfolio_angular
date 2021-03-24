@@ -13,10 +13,10 @@
 
     <h4>Listed below are some of my public projects fetched from github </h4>
     <br>
-  <div class="fit" *ngFor="let repo of repositories">
+  <div class="fitwide" *ngFor="let repo of repositories">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title border-bottom font-weight-bold">{{repo.name | titlecase}}</h4> 
+            <div class="card-title border-bottom font-weight-bold">{{repo.name | titlecase}}</div> 
             <div class="card-text" ><i> {{repo.description}} </i></div> 
             <a href="{{ repo.clone_url }}" class="btn btn-dark" target="_blank" >clone</a>    
         </div>

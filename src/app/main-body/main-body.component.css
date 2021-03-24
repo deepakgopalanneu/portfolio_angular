@@ -17,7 +17,7 @@ h1 {
 }
 
 .bodysize img {
-  width: 30%;
-  height: 30%;
+  width: 150px;
+  height: 150px;
   align-self: center;
 }
