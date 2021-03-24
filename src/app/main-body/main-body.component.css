@@ -1,25 +1,23 @@
-
-.bodysize{
-    padding-top: 65px; 
-    padding-bottom: 15px;
-    width:60%; 
-    margin:0 auto;
-    border-bottom: 2px solid gray;
+.bodysize {
+  padding-top: 65px;
+  padding-bottom: 15px;
+  width: 60%;
+  margin: 0 auto;
+  border-bottom: 2px solid gray;
 }
-.bodytext{
-    text-align: center;
-    color:rgb(99, 97, 97);
-}
-
-h1{
-   font-family:  'Permanent Marker', cursive;
-   color: black;
-   align-self: center;
+.bodytext {
+  text-align: center;
+  color: rgb(99, 97, 97);
 }
 
-.picture img{
-    width: 30%;
-    height: 30%;
-    align-self: center;
+h1 {
+  font-family: "Permanent Marker", cursive;
+  color: black;
+  align-self: center;
+}
 
+.bodysize img {
+  width: 30%;
+  height: 30%;
+  align-self: center;
 }

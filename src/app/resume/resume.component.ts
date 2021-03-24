@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-resume',
   templateUrl: './resume.component.html',
@@ -8,11 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class ResumeComponent implements OnInit {
 
   constructor() { }
+  url = "https://deepak-portfolio-resume.s3.amazonaws.com/Resume.pdf";
 
   ngOnInit(): void {
   }
 
-  downloadPdf(){
-    // apicall
-  }
 }
