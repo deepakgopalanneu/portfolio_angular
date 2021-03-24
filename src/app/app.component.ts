@@ -11,8 +11,14 @@ export class AppComponent implements OnInit{
   constructor (private  client:HttpClient){}
   
 
+  images: string[] = [];
+  ngOnInit(): void { 
 
-  ngOnInit(): void { }
+    this.images=["./../assets/img1","./../assets/img2","./../assets/img3" ]
+  }
 
-  title = 'portfolio';
+
+  title = 'Deepak';
+
+  
 }

@@ -1,0 +1,23 @@
+.bodysize {
+  padding-top: 65px;
+  padding-bottom: 15px;
+  width: 60%;
+  margin: 0 auto;
+  border-bottom: 2px solid gray;
+}
+.bodytext {
+  text-align: center;
+  color: rgb(99, 97, 97);
+}
+
+h1 {
+  font-family: "Permanent Marker", cursive;
+  color: black;
+  align-self: center;
+}
+
+.bodysize img {
+  width: 150px;
+  height: 150px;
+  align-self: center;
+}

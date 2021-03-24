@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { AppComponent } from './app.component';
 import { ContactmeComponent } from './contactme/contactme.component';
+import { ProjectsComponent } from './projects/projects.component';
 import { ResumeComponent } from './resume/resume.component';
 
 const routes: Routes = [
@@ -11,28 +12,28 @@ const routes: Routes = [
     component: ResumeComponent
 },
 {
-    path: 'about',
-    component: AboutComponent
+    path: 'projects',
+    component: ProjectsComponent
 },
 {
     path: 'contactme',
     component: ContactmeComponent 
 }
-// ,
-// {
-//     path: 'home',
-//     component: AppComponent 
-// },
-// {
-//     path: '',
-//     redirectTo: '/home',
-//     pathMatch: 'full'
-// },
-// {
-//     path: '**',
-//     redirectTo: '/home',
-//     pathMatch: 'full'
-// }
+,
+{
+    path: 'home',
+    component: AboutComponent 
+},
+{
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
+},
+{
+    path: '**',
+    redirectTo: '/home',
+    pathMatch: 'full'
+}
 ];
 
 @NgModule({

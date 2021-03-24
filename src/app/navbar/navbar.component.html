@@ -1,15 +1,31 @@
-<nav class="navbar navbar-expand-md navbar-custom  ">
-        <div class="navbar-header ">
-            <a href="https://www.deepakgopalan.me" class="navbar-brand titlefont" >Deepak Gopalan</a>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+</style>
+
+
+<nav class="navbar navbar-expand-lg navbar-inverse bg-white navbar-light border-bottom fixed-top">
+        <a routerLink="about" class="navbar-brand titlefont" >DG</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#myNavBar" aria-controls="myNavBar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"> </span>
+        </button>
+
+    <!-- <div class=" nav-content navbar-center middle">  -->
+    <div class="collapse navbar-collapse " id="myNavBar">
+        <ul class="nav navbar-nav ml-auto " routerLinkActive="active">
+            <li class="nav-item"><a class="nav-link" routerLink="resume">RESUME</a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="projects">PROJECTS</a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="contactme">CONTACT</a></li>
+        <!-- </ul>
+    </div>
+        
+
+        <div class="">
+        <ul class=" nav navbar-nav " > -->
+            <li class="nav-item"><a class="nav-link" target="_blank" href="https://github.com/deepakgopalanneu">GITHUB</a></li>
+            <li class="nav-item"><a class="nav-link" target="_blank" href="https://www.linkedin.com/in/deepak-gopalan-neu/">LINKEDIN</a></li>
+        </ul>
         </div>
-        <ul class="nav navbar-nav mr-auto" routerLinkActive="active">
-            <li class="nav-item"><a class="nav-link" routerLink="resume">Resume</a></li>
-            <li class="nav-item"><a class="nav-link" routerLink="about">About</a></li>
-            <li class="nav-item"><a class="nav-link" routerLink="contactme">Contact Me</a></li>
-        </ul>
-        <ul class="nav navbar-nav  " >
-            <li class="nav-item"><a class="nav-link" href="https://github.com/deepakgopalanneu">GitHub</a></li>
-            <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/in/deepak-gopalan-neu/">LinkedIn</a></li>
-        </ul>
+
+        
 </nav>
 

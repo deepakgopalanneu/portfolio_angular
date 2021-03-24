@@ -1,17 +1,15 @@
-@import '~bootstrap/dist/css/bootstrap.css';
+@import "~bootstrap/dist/css/bootstrap.css";
 
-.navbar-custom{
-  background-image: linear-gradient(180deg,#13547a 5%, #80d0c7 100%);
-}
-.titlefont{
-  font-size: x-large;
+.titlefont {
+  font-family: "Great Vibes", cursive;
+  font-size: larger;
   font-weight: bolder;
-  background: rgb(255, 255, 255);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-nav ul li a {
-  font-size: medium;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 
+nav div ul li a {
+  font-family: Montserrat, helvetica neue, Helvetica, Arial, sans-serif;
+  font-size: large;
+  /* font-weight: bold; */
+  /* color: rgb(0, 0, 0) !important; */
+}

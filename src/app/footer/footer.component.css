@@ -1,0 +1,30 @@
+
+footer div{
+    font-size: small;
+    display: inline-block;
+}
+.fa {
+    /* display: inline-block; */
+    /* padding: 20px; */
+    font-size: 20px;
+    width: 40px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+  }
+  .fa-fw{
+    width: 1.28571429em;
+    text-align: center;
+  }
+  .fa-lg{
+    font-size: 1.33333333em;
+    line-height: .75em;
+    vertical-align: -15%;
+  }
+
+  .gray{
+    color: #aaa;
+  }
+  .fa:hover {
+      opacity: 0.7;
+  }
