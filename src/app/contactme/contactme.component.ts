@@ -11,6 +11,7 @@ export class ContactmeComponent implements OnInit {
 
   myEmailId = "gopalan.d@northeastern.edu"
   form :FormGroup;
+  sent :boolean = false;
 
   constructor(private formBuilder: FormBuilder, private http :HttpClient) {
     this.form = this.formBuilder.group({
@@ -23,12 +24,28 @@ export class ContactmeComponent implements OnInit {
 {
     return this.form.controls;
 }
+
   ngOnInit(): void {
     
   }
 
   sendEmail(){
     // call API
-    // this.http.post("")
+
+    let body = { senderEmail : this.form.value.emailControl , messagBody : this.form.value.messageControl};
+  
+    this.http.post("http://localhost:3000/sendEmail", body ).subscribe (res =>{
+      this.sent=true;
+      setTimeout( () => {
+        this.sent = false;
+      }, 2000);
+      this.form.reset();
+    },
+    error => {
+      console.log(error);
+    })
+    
   }
 }
+
+

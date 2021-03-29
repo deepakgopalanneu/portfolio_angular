@@ -1,0 +1,59 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Pipeline to Deploy Angular
+env:
+  ARTIFACT_NAME: portfolio-angular-${{ github.run_number }}.zip
+  CODEDEPLOY_APPLICATION_NAME: portfolio-angular
+  CODEDEPLOY_APPLICATION_DEPLOYMNET_GROUP_NAME: portfolio-angular-deployment
+  AWS_REGION: us-east-1
+  S3_CODEDEPLOY_BUCKET: prod.codedeploy.deepakgopalan.me
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    # strategy:
+    #   matrix:
+    #     node-version: [12.x]
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v2
+      - name: Install packages
+        run: sudo apt-get update
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+      - name: Install npm modules
+        run: npm install
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Install angular
+        run: npm install -g angular-cli
+
+      - name: Build Project
+        run: ng build --prod
+
+      - name: Zip CodeDeploy Files and the Artifact
+        run: |
+          mkdir artifact
+          zip -r ${{env.ARTIFACT_NAME}} ./dist/portfolio codedeploy/*.sh appspec.yml
+          ls -la
+          mv ${{env.ARTIFACT_NAME}} artifact/
+      - name: Copy Zip File to S3
+        run: aws s3 cp ./artifact/${{env.ARTIFACT_NAME}} s3://${{ secrets.S3_CODEDEPLOY_BUCKET }} --sse
+      - name: CodeDeploy API call
+        run: aws deploy create-deployment --application-name ${{ env.CODEDEPLOY_APPLICATION_NAME }} --deployment-config-name CodeDeployDefault.AllAtOnce  --deployment-group-name ${{ env.CODEDEPLOY_APPLICATION_DEPLOYMNET_GROUP_NAME }}  --s3-location bucket=${{ secrets.S3_CODEDEPLOY_BUCKET }},key=${{ env.ARTIFACT_NAME }},bundleType=zip  --region ${{ env.AWS_REGION }}
