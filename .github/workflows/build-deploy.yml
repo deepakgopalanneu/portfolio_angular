@@ -45,7 +45,10 @@ jobs:
         run: npm install -g angular-cli
 
       - name: Build Project
-        run: ng build --prod
+        run: |
+        cd portfolio
+        ng build --prod
+        ls -la
 
       - name: Zip CodeDeploy Files and the Artifact
         run: |
