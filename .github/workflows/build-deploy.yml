@@ -42,13 +42,10 @@ jobs:
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Install angular
-        run: npm install -g angular-cli
+        run: npm install -g @angular/cli
 
       - name: Build Project
-        run: |
-          ls -la
-          cd portfolio_angular
-          ng build --prod
+        run: ng build --prod
 
       - name: Zip CodeDeploy Files and the Artifact
         run: |
