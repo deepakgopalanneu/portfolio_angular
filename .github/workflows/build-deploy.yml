@@ -46,9 +46,9 @@ jobs:
 
       - name: Build Project
         run: |
-          cd portfolio
-          ng build --prod
           ls -la
+          cd portfolio_angular
+          ng build --prod
 
       - name: Zip CodeDeploy Files and the Artifact
         run: |
