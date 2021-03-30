@@ -1,6 +1,7 @@
 #!/bin/bash
 
-sudo mv dist /var/www
+cd /var/www
+sudo mv ~/dist .
 
 sudo service nginx restart 
 
