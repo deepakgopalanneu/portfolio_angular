@@ -1,5 +1,5 @@
 #!/bin/bash
 
-sudo mv /dist/portfolio /var/www/
+sudo mv dist /var/www
 
 sudo service nginx restart 
