@@ -9,15 +9,14 @@ app.get('/', (req, res) => res.send('up'));
 
 app.post('/sendEmail',jsonParser, (req, res) =>{
     console.log("Request Received!");
-    let senderEmail = req.body.senderEmail;
-    let messagBody = req.body.messagBody;
+
     let ARN='arn:aws:sns:us-east-1:384467288578:TOPIC_EMAIL';
     aws.config.update({ region: "us-east-1" });
     
     let sns = new aws.SNS();
     let params = {
           TopicArn: ARN,
-          Message: `${senderEmail},${messagBody}`
+          Message: `${req.body.senderEmail},${req.body.messagBody}`
         };
 
     sns.publish(params, (err, data) => {
