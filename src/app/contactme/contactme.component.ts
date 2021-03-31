@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl,FormBuilder, Validators, FormGroup } from '@angular/forms';
 
@@ -33,8 +33,8 @@ export class ContactmeComponent implements OnInit {
     // call API
 
     let body = { senderEmail : this.form.value.emailControl , messagBody : this.form.value.messageControl};
-  
-    this.http.post("deepakgopalan.me/sendEmail", body ).subscribe (res =>{
+    const headers = new HttpHeaders({'Content-Type':'text/plain'});
+    this.http.post("deepakgopalan.me/sendEmail", body, {headers} ).subscribe (res =>{
       this.sent=true;
       setTimeout( () => {
         this.sent = false;
