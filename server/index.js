@@ -8,30 +8,27 @@ app.use(cors());
 app.get('/', (req, res) => res.send('up'));
 
 app.post('/sendEmail',jsonParser, (req, res) =>{
-
+    console.log("Request Received!");
     let senderEmail = req.body.senderEmail;
     let messagBody = req.body.messagBody;
-    let ARN;
+    let ARN='arn:aws:sns:us-east-1:384467288578:TOPIC_EMAIL';
     aws.config.update({ region: "us-east-1" });
     let sns = new aws.SNS();
-    sns.listTopics((err, data) => {
-        if (err) 
-        console.log("err in sns listTopics : "+ err.message);
-        else 
-        ARN = data.Topics[0].TopicArn;
-
-        let params = {
+    let params = {
           TopicArn: ARN,
           Message: `${senderEmail},${messagBody}`
         };
 
-        sns.publish(params, (err, data) => {
-          if (err) {
-            console.log("error in publishing message: "+ err.message);
-          } else {
-            console.log("Request recieved!");
-          }
-        });
+    sns.publish(params, (err, data) => {
+      if (err) {
+        console.log("error in publishing message: "+ err.message);
+      } 
+      if(data) {
+          res.setHeader("Access-Control-Allow-Origin", "*");  
+          res.sendStatus(200);
+          res.body("sent!")
+          console.log("Request dispatched!");
+        } 
       });
     });  
 
