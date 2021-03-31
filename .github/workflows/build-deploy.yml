@@ -50,7 +50,7 @@ jobs:
       - name: Zip CodeDeploy Files and the Artifact
         run: |
           mkdir artifact
-          zip -r ${{env.ARTIFACT_NAME}} ./dist/portfolio server codedeploy/*.sh appspec.yml
+          zip -r ${{env.ARTIFACT_NAME}} ./dist/portfolio server codedeploy/*.sh appspec.yml server.conf
           ls -la
           mv ${{env.ARTIFACT_NAME}} artifact/
       - name: Copy Zip File to S3

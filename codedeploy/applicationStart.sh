@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo mv ~/server.conf /etc/nginx/conf.d/
+
 cd /var/www
 sudo mv ~/dist .
 
