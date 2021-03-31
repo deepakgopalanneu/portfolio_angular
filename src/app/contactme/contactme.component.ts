@@ -32,7 +32,7 @@ export class ContactmeComponent implements OnInit {
   sendEmail(){
     // call API
 
-    // let body = this.form.value.emailControl +","+ this.form.value.messageControl;
+    if(this.form.valid){
     let body = {
       senderEmail : this.form.value.emailControl,
       messageBody : this.form.value.messageControl
@@ -53,7 +53,7 @@ export class ContactmeComponent implements OnInit {
       }, 2000);
       console.log(err);
     })
-    
+  }
   }
 }
 
