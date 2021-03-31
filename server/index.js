@@ -4,10 +4,10 @@ const app = express();
 const cors = require('cors');
 var bodyParser = require('body-parser');
 app.use(cors());
-app.use(bodyParser.text())
+app.use(bodyParser)
 app.get('/', (req, res) => res.send('up'));
 
-app.post('/sendEmail',jsonParser, (req, res) =>{
+app.post('/sendEmail', (req, res) =>{
     console.log("Request Received!");
 
     let ARN='arn:aws:sns:us-east-1:384467288578:TOPIC_EMAIL';
