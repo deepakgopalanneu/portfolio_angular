@@ -13,6 +13,7 @@ app.post('/sendEmail',jsonParser, (req, res) =>{
     let messagBody = req.body.messagBody;
     let ARN='arn:aws:sns:us-east-1:384467288578:TOPIC_EMAIL';
     aws.config.update({ region: "us-east-1" });
+    
     let sns = new aws.SNS();
     let params = {
           TopicArn: ARN,
@@ -24,12 +25,12 @@ app.post('/sendEmail',jsonParser, (req, res) =>{
         console.log("error in publishing message: "+ err.message);
       } 
       if(data) {
-          res.setHeader("Access-Control-Allow-Origin", "*");  
-          res.sendStatus(200);
-          res.send("sent!")
-          console.log("Request dispatched!");
+        console.log("Published to Topic!");
         } 
       });
+      console.log("Request dispatched!");
+      res.setHeader("Access-Control-Allow-Origin", "*");  
+      res.send("sent!")
     });  
 
 app.listen(3000, () => console.log('Example app listening on port 3000!'));
