@@ -1,6 +1,7 @@
 footer div {
   font-size: medium;
   display: inline-block;
+  max-height: fit-content;
 }
 .fa {
   /* display: inline-block; */
