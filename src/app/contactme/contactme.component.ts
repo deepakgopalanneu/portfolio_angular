@@ -32,7 +32,7 @@ export class ContactmeComponent implements OnInit {
   sendEmail(){
     // call API
 
-    let body = { senderEmail : this.form.value.emailControl , messagBody : this.form.value.messageControl};
+    let body = "this.form.value.emailControl,this.form.value.messageControl";
     const headers = new HttpHeaders({'Content-Type':'text/plain'});
     this.http.post("/sendEmail", body, {headers} ).subscribe (res =>{
       console.log(res);
