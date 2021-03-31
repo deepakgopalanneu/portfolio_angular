@@ -34,7 +34,7 @@ export class ContactmeComponent implements OnInit {
 
     let body = { senderEmail : this.form.value.emailControl , messagBody : this.form.value.messageControl};
   
-    this.http.post("http://localhost:3000/sendEmail", body ).subscribe (res =>{
+    this.http.post("http://127.0.0.1:3000/sendEmail", body ).subscribe (res =>{
       this.sent=true;
       setTimeout( () => {
         this.sent = false;
