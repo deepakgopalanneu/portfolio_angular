@@ -32,8 +32,12 @@ export class ContactmeComponent implements OnInit {
   sendEmail(){
     // call API
 
-    let body = "this.form.value.emailControl,this.form.value.messageControl";
-    const headers = new HttpHeaders({'Content-Type':'text/plain'});
+    // let body = this.form.value.emailControl +","+ this.form.value.messageControl;
+    let body = {
+      senderEmail : this.form.value.emailControl,
+      messageBody : this.form.value.messageControl
+    }
+    const headers = new HttpHeaders({'Content-Type':'application/json'});
     this.http.post("/sendEmail", body, {headers} ).subscribe (res =>{
       console.log(res);
       this.sent=true;
