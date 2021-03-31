@@ -32,7 +32,7 @@ app.post('/sendEmail', (req, res) =>{
       });
       console.log("Request dispatched!");
       res.setHeader("Access-Control-Allow-Origin", "*");  
-      res.send("sent!")
+      res.json({"status":"sent"});
     });  
 
 app.listen(3000, () => console.log('Example app listening on port 3000!'));
