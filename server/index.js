@@ -26,7 +26,7 @@ app.post('/sendEmail',jsonParser, (req, res) =>{
       if(data) {
           res.setHeader("Access-Control-Allow-Origin", "*");  
           res.sendStatus(200);
-          res.body("sent!")
+          res.send("sent!")
           console.log("Request dispatched!");
         } 
       });
