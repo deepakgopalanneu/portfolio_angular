@@ -35,18 +35,19 @@ export class ContactmeComponent implements OnInit {
     let body = { senderEmail : this.form.value.emailControl , messagBody : this.form.value.messageControl};
     const headers = new HttpHeaders({'Content-Type':'text/plain'});
     this.http.post("/sendEmail", body, {headers} ).subscribe (res =>{
+      console.log(res);
       this.sent=true;
       setTimeout( () => {
         this.sent = false;
       }, 2000);
       this.form.reset();
     },
-    error => {
+    err => {
       this.failed = true;
       setTimeout( () => {
         this.failed = false;
       }, 2000);
-      console.log(error);
+      console.log(err);
     })
     
   }
