@@ -34,7 +34,7 @@ export class ContactmeComponent implements OnInit {
 
     let body = { senderEmail : this.form.value.emailControl , messagBody : this.form.value.messageControl};
     const headers = new HttpHeaders({'Content-Type':'text/plain'});
-    this.http.post("deepakgopalan.me/sendEmail", body, {headers} ).subscribe (res =>{
+    this.http.post("/sendEmail", body, {headers} ).subscribe (res =>{
       this.sent=true;
       setTimeout( () => {
         this.sent = false;
