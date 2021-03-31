@@ -19,7 +19,7 @@ app.post('/sendEmail', (req, res) =>{
     let sns = new aws.SNS();
     let params = {
           TopicArn: ARN,
-          Message: message.senderEmail+","+message.messagBody
+          Message: message.senderEmail+","+message.messageBody
         };
 
     sns.publish(params, (err, data) => {
